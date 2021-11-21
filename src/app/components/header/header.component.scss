@@ -1,0 +1,10 @@
+:host {
+  display: block;
+  .menu-container {
+    display: flex;
+    h3 {
+      line-height: 2.1;
+      cursor: pointer;
+    }
+  }
+}

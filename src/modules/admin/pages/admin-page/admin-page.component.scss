@@ -1,0 +1,15 @@
+:host {
+  mat-tab-group {
+    padding: 0 15%;
+  }
+  ::ng-deep .mat-tab-label {
+    width: 100%;
+    font-size: 1.5rem;
+  }
+
+  @media only screen and (max-width: 768px) {
+    mat-tab-group {
+      padding: 0;
+    }
+  }
+}

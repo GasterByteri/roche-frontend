@@ -1,0 +1,62 @@
+<ng-container *ngIf="form">
+  <div class="container">
+    <h1 class="logo">
+      <strong>
+        MojLjekar
+      </strong>
+    </h1>
+    <h1>Prijava</h1>
+    <form
+      [formGroup]="form"
+      autocapitalize="off"
+      autocomplete="off"
+      (ngSubmit)="onSubmit()"
+    >
+      <mat-form-field
+        class="form-field"
+        appearance="outline">
+        <mat-label>
+          Email
+        </mat-label>
+        <input
+          type="email"
+          formControlName="email"
+          matInput
+          placeholder="Email"
+        >
+        <mat-error>{{getControlErrors('username')}}</mat-error>
+        <mat-icon matSuffix>
+          email
+        </mat-icon>
+      </mat-form-field>
+      <mat-form-field
+        class="form-field"
+        appearance="outline">
+        <mat-label>
+          Password
+        </mat-label>
+        <input
+          [type]="pwVisible ? 'text' : 'password'"
+          formControlName="password"
+          matInput
+          placeholder="Password"
+        >
+        <mat-error>{{getControlErrors('password')}}</mat-error>
+        <mat-icon matSuffix (click)="revealPassword()">
+          {{pwVisible ? 'visibility_off' : 'visibility'}}
+        </mat-icon>
+      </mat-form-field>
+
+      <button
+        mat-raised-button
+        type="submit"
+        color="primary"
+        [disabled]="form.invalid"
+      >Primary
+      </button>
+
+    </form>
+
+  </div>
+
+</ng-container>
